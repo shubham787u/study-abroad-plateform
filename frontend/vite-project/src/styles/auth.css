@@ -1,0 +1,113 @@
+/* ============================
+   AUTH PAGE SPECIFIC STYLES
+   Login & Register pages
+============================ */
+
+.auth-page-wrapper {
+  min-height: calc(100vh - 80px);
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  padding: 3rem 1rem 4rem 1rem;
+}
+
+.auth-card {
+  width: 100%;
+  max-width: 480px;
+  animation: fadeInUp 0.4s ease both;
+}
+
+.auth-card-wide {
+  max-width: 720px;
+}
+
+/* Auth page header icon */
+.auth-icon-wrap {
+  width: 60px;
+  height: 60px;
+  border-radius: 16px;
+  background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 1.25rem auto;
+  color: white;
+  box-shadow: var(--shadow-glow);
+}
+
+.auth-title {
+  font-size: 1.85rem;
+  text-align: center;
+  margin-bottom: 0.4rem;
+}
+
+.auth-subtitle {
+  font-size: 0.9rem;
+  color: var(--text-muted);
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.auth-divider {
+  display: flex;
+  align-items: center;
+  gap: 0.85rem;
+  margin: 1.5rem 0;
+  color: var(--text-subtle);
+  font-size: 0.8rem;
+}
+
+.auth-divider::before,
+.auth-divider::after {
+  content: '';
+  flex: 1;
+  height: 1px;
+  background: var(--border-light);
+}
+
+.auth-footer-link {
+  text-align: center;
+  margin-top: 1.75rem;
+  padding-top: 1.25rem;
+  border-top: 1px solid var(--border-light);
+  font-size: 0.875rem;
+  color: var(--text-muted);
+}
+
+.auth-footer-link a {
+  color: var(--primary);
+  font-weight: 600;
+  transition: color 0.15s;
+}
+
+.auth-footer-link a:hover {
+  color: #a5b4fc;
+}
+
+/* Password strength indicator */
+.password-strength-bar {
+  height: 4px;
+  border-radius: var(--radius-full);
+  background: var(--border-light);
+  margin-top: 0.4rem;
+  overflow: hidden;
+}
+
+.password-strength-fill {
+  height: 100%;
+  border-radius: var(--radius-full);
+  transition: width 0.3s ease, background-color 0.3s ease;
+}
+
+/* Section dividers in multi-section forms */
+.form-section-title {
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: var(--primary);
+  border-bottom: 1px solid var(--border-light);
+  padding-bottom: 0.5rem;
+  margin: 1.5rem 0 1.1rem;
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+}
