@@ -234,7 +234,7 @@ const Programs = () => {
               onChange={(e) => handleFilterChange('intake', e.target.value)}
             >
               <option value="">All Intakes</option>
-              <option value="Fall">Fall</option>
+              <option value="Fall">Winter</option>
               <option value="Spring">Spring</option>
               <option value="Summer">Summer</option>
             </select>
@@ -295,7 +295,7 @@ const Programs = () => {
         {/* Right Main Panel */}
         <div style={{ display: 'flex', flexDirection: 'column', gap: '1.5rem' }}>
           {/* Search Header Bar */}
-          <SearchBar onSearch={handleSearchSubmit} placeholder="Search program titles or university names..." />
+          <SearchBar onSearch={handleSearchSubmit} placeholder="Search program titles or university names" />
 
           {/* Results Display */}
           {loading ? (
@@ -391,7 +391,7 @@ const Programs = () => {
 
             <form onSubmit={handleApplySubmit}>
               <div className="form-group">
-                <label className="form-label">Statement of Purpose (SOP) / Application Note</label>
+                <label className="form-label">Statement of Purpose / Application Note</label>
                 <textarea
                   className="form-control"
                   placeholder="Explain why you are an ideal candidate for this program..."

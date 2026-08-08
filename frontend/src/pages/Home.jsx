@@ -71,7 +71,7 @@ const Home = () => {
           }}
         >
           <Sparkles size={15} style={{ color: 'var(--secondary)' }} />
-          Smart AI University & Program Recommendation Platform
+          Smart University & Program Recommendation Platform
         </div>
 
         <h1 className="hero-title">
@@ -83,13 +83,13 @@ const Home = () => {
         </p>
 
         <div style={{ maxWidth: '650px', margin: '0 auto 2.5rem auto' }}>
-          <SearchBar onSearch={handleSearch} placeholder="Search by degree title, field (e.g. Computer Science) or university..." />
+          <SearchBar onSearch={handleSearch} placeholder="Search by degree title, field (ex-Computer Science) or university" />
         </div>
 
         <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '1rem', flexWrap: 'wrap' }}>
           <Link to="/recommendations" className="btn btn-accent btn-lg">
             <Sparkles size={18} />
-            Try AI Program Matcher
+            Try Program Matcher
           </Link>
           <Link to="/programs" className="btn btn-secondary btn-lg">
             <BookOpen size={18} />
@@ -175,7 +175,7 @@ const Home = () => {
             </div>
             <h3 style={{ fontSize: '1.2rem', marginBottom: '0.6rem' }}>Global University Catalog</h3>
             <p style={{ color: 'var(--text-muted)', fontSize: '0.9rem' }}>
-              Filter programs by tuition fees, intake seasons (Fall, Spring, Summer), degree levels, and world rankings.
+              Filter programs by tuition fees, intake seasons, degree levels, and world rankings.
             </p>
           </div>
 
@@ -197,7 +197,7 @@ const Home = () => {
             </div>
             <h3 style={{ fontSize: '1.2rem', marginBottom: '0.6rem' }}>Application Tracker</h3>
             <p style={{ color: 'var(--text-muted)', fontSize: '0.9rem' }}>
-              Submit your Statement of Purpose (SOP) directly and track application progress from 'Applied' to 'Accepted' in real-time.
+              Submit your Statement of Purpose directly and track application progress from 'Applied' to 'Accepted' in real-time.
             </p>
           </div>
         </div>

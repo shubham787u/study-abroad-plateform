@@ -31,7 +31,7 @@ const Navbar = () => {
       <div className="navbar-container">
         <Link to="/" className="brand-logo">
           <div className="brand-icon">
-            <GraduationCap size={22} />
+            <GraduationCap size={25} />
           </div>
           <span>StudyAbroad<span style={{ color: 'var(--secondary)' }}>Hub</span></span>
         </Link>
@@ -55,7 +55,7 @@ const Navbar = () => {
 
           <NavLink to="/recommendations" className={({ isActive }) => `nav-link ${isActive ? 'active' : ''}`}>
             <Sparkles size={16} style={{ color: 'var(--secondary)' }} />
-            AI Matcher
+            AI Matches
           </NavLink>
 
           {isAuthenticated && (

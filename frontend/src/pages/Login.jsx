@@ -62,9 +62,6 @@ const Login = () => {
             <LogIn size={28} />
           </div>
           <h2 style={{ fontSize: '1.75rem', marginBottom: '0.35rem' }}>Welcome Back</h2>
-          <p style={{ color: 'var(--text-muted)', fontSize: '0.9rem' }}>
-            Sign in to manage applications and personalized matches
-          </p>
         </div>
 
         {error && (
@@ -84,7 +81,7 @@ const Login = () => {
               type="email"
               name="email"
               className="form-control"
-              placeholder="student@example.com"
+              placeholder="Enter your email"
               value={formData.email}
               onChange={handleChange}
               required

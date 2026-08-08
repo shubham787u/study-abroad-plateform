@@ -1,77 +1,92 @@
-import React, { useState } from 'react';
-import { Link, useNavigate } from 'react-router-dom';
-import { useAuth } from '../context/AuthContext';
-import { UserPlus, User, Mail, Lock, Globe, DollarSign, Award, Calendar, BookOpen, AlertCircle } from 'lucide-react';
+import React, { useState } from "react";
+import { Link, useNavigate } from "react-router-dom";
+import { useAuth } from "../context/AuthContext";
+import {
+  UserPlus,
+  User,
+  Mail,
+  Lock,
+  Globe,
+  DollarSign,
+  Award,
+  Calendar,
+  BookOpen,
+  AlertCircle,
+} from "lucide-react";
 
 const Register = () => {
   const { register } = useAuth();
   const navigate = useNavigate();
 
   const [formData, setFormData] = useState({
-    name: '',
-    email: '',
-    password: '',
-    preferredCountry: 'USA',
-    preferredField: 'Computer Science',
-    budget: '30000',
-    ieltsScore: '7.0',
-    preferredIntake: 'Fall 2026',
+    name: "",
+    email: "",
+    password: "",
+    preferredCountry: "USA",
+    preferredField: "Computer Science",
+    budget: "30000",
+    ieltsScore: "7.0",
+    preferredIntake: "Fall 2026",
   });
 
-  const [error, setError] = useState('');
+  const [error, setError] = useState("");
   const [loading, setLoading] = useState(false);
 
   const handleChange = (e) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
-    if (error) setError('');
+    if (error) setError("");
   };
 
   const handleSubmit = async (e) => {
     e.preventDefault();
     if (!formData.name || !formData.email || !formData.password) {
-      setError('Please provide name, email, and password.');
+      setError("Please provide name, email, and password.");
       return;
     }
 
     try {
       setLoading(true);
-      setError('');
+      setError("");
       await register({
         ...formData,
         budget: Number(formData.budget) || 0,
         ieltsScore: Number(formData.ieltsScore) || 0,
       });
-      navigate('/dashboard');
+      navigate("/dashboard");
     } catch (err) {
-      setError(err.message || 'Registration failed');
+      setError(err.message || "Registration failed");
     } finally {
       setLoading(false);
     }
   };
 
   return (
-    <div style={{ maxWidth: '680px', margin: '2rem auto 0 auto' }}>
-      <div className="glass-card" style={{ padding: '2.5rem' }}>
-        <div style={{ textAlign: 'center', marginBottom: '2rem' }}>
+    <div style={{ maxWidth: "680px", margin: "2rem auto 0 auto" }}>
+      <div className="glass-card" style={{ padding: "2.5rem" }}>
+        <div style={{ textAlign: "center", marginBottom: "2rem" }}>
           <div
             style={{
-              width: '56px',
-              height: '56px',
-              borderRadius: '16px',
-              background: 'linear-gradient(135deg, var(--secondary) 0%, var(--primary) 100%)',
-              display: 'flex',
-              alignItems: 'center',
-              justifyContent: 'center',
-              margin: '0 auto 1rem auto',
-              color: 'white',
-              boxShadow: 'var(--shadow-glow)',
+              width: "56px",
+              height: "56px",
+              borderRadius: "16px",
+              background:
+                "linear-gradient(135deg, var(--secondary) 0%, var(--primary) 100%)",
+              display: "flex",
+              alignItems: "center",
+              justifyContent: "center",
+              margin: "0 auto 1rem auto",
+              color: "white",
+              boxShadow: "var(--shadow-glow)",
             }}
           >
             <UserPlus size={28} />
           </div>
-          <h2 style={{ fontSize: '1.75rem', marginBottom: '0.35rem' }}>Create Student Profile</h2>
-          <p style={{ color: 'var(--text-muted)', fontSize: '0.9rem' }}>
-            Set up your account and study abroad preferences for instant AI program recommendations
+          <h2 style={{ fontSize: "1.75rem", marginBottom: "0.35rem" }}>
+            Create Student Profile
+          </h2>
+          <p style={{ color: "var(--text-muted)", fontSize: "0.9rem" }}>
+            Set up your account and study abroad preferences for instant AI
+            program recommendations
           </p>
         </div>
 
@@ -83,7 +98,15 @@ const Register = () => {
         )}
 
         <form onSubmit={handleSubmit}>
-          <h3 style={{ fontSize: '1rem', color: 'var(--primary)', marginBottom: '1rem', borderBottom: '1px solid var(--border-light)', paddingBottom: '0.5rem' }}>
+          <h3
+            style={{
+              fontSize: "1rem",
+              color: "var(--primary)",
+              marginBottom: "1rem",
+              borderBottom: "1px solid var(--border-light)",
+              paddingBottom: "0.5rem",
+            }}
+          >
             Account Credentials
           </h3>
 
@@ -96,7 +119,7 @@ const Register = () => {
                 type="text"
                 name="name"
                 className="form-control"
-                placeholder="John Doe"
+                placeholder="Enter your fullname"
                 value={formData.name}
                 onChange={handleChange}
                 required
@@ -111,7 +134,7 @@ const Register = () => {
                 type="email"
                 name="email"
                 className="form-control"
-                placeholder="student@example.com"
+                placeholder="Enter your email"
                 value={formData.email}
                 onChange={handleChange}
                 required
@@ -127,7 +150,7 @@ const Register = () => {
               type="password"
               name="password"
               className="form-control"
-              placeholder="Create a strong password (min 6 characters)"
+              placeholder="Enter a strong password (min 6 characters)"
               value={formData.password}
               onChange={handleChange}
               minLength={6}
@@ -135,7 +158,15 @@ const Register = () => {
             />
           </div>
 
-          <h3 style={{ fontSize: '1rem', color: 'var(--secondary)', margin: '1.5rem 0 1rem 0', borderBottom: '1px solid var(--border-light)', paddingBottom: '0.5rem' }}>
+          <h3
+            style={{
+              fontSize: "1rem",
+              color: "var(--secondary)",
+              margin: "1.5rem 0 1rem 0",
+              borderBottom: "1px solid var(--border-light)",
+              paddingBottom: "0.5rem",
+            }}
+          >
             Study Preferences (For AI Matcher)
           </h3>
 
@@ -169,7 +200,9 @@ const Register = () => {
                 onChange={handleChange}
               >
                 <option value="Computer Science">Computer Science & IT</option>
-                <option value="Business Analytics">Business & Management</option>
+                <option value="Business Analytics">
+                  Business & Management
+                </option>
                 <option value="Data Science">Data Science & AI</option>
                 <option value="Engineering">Engineering</option>
                 <option value="Finance">Finance & Economics</option>
@@ -219,22 +252,37 @@ const Register = () => {
                 value={formData.preferredIntake}
                 onChange={handleChange}
               >
-                <option value="Fall 2026">Fall 2026</option>
+                <option value="Fall 2026">Winter 2026</option>
                 <option value="Spring 2027">Spring 2027</option>
                 <option value="Summer 2026">Summer 2026</option>
               </select>
             </div>
           </div>
 
-          <button type="submit" className="btn btn-primary btn-lg" style={{ width: '100%', marginTop: '1.5rem' }} disabled={loading}>
-            {loading ? 'Creating Profile...' : 'Complete Registration'}
+          <button
+            type="submit"
+            className="btn btn-primary btn-lg"
+            style={{ width: "100%", marginTop: "1.5rem" }}
+            disabled={loading}
+          >
+            {loading ? "Creating Profile..." : "Complete Registration"}
           </button>
         </form>
 
-        <div style={{ textAlign: 'center', marginTop: '2rem', paddingTop: '1.25rem', borderTop: '1px solid var(--border-light)' }}>
-          <p style={{ color: 'var(--text-muted)', fontSize: '0.9rem' }}>
-            Already registered?{' '}
-            <Link to="/login" style={{ color: 'var(--primary)', fontWeight: 600 }}>
+        <div
+          style={{
+            textAlign: "center",
+            marginTop: "2rem",
+            paddingTop: "1.25rem",
+            borderTop: "1px solid var(--border-light)",
+          }}
+        >
+          <p style={{ color: "var(--text-muted)", fontSize: "0.9rem" }}>
+            Already registered?{" "}
+            <Link
+              to="/login"
+              style={{ color: "var(--primary)", fontWeight: 600 }}
+            >
               Sign In Here
             </Link>
           </p>

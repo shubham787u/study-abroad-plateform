@@ -63,7 +63,7 @@ const Universities = () => {
       {/* Country Filter Chips & Search Bar */}
       <div style={{ display: 'flex', flexDirection: 'column', gap: '1.25rem' }}>
         <div style={{ maxWidth: '600px' }}>
-          <SearchBar onSearch={handleSearchSubmit} placeholder="Search university by name..." />
+          <SearchBar onSearch={handleSearchSubmit} placeholder="Search university by name" />
         </div>
 
         <div style={{ display: 'flex', alignItems: 'center', gap: '0.65rem', flexWrap: 'wrap' }}>

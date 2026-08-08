@@ -79,7 +79,7 @@ const Dashboard = () => {
         <div style={{ display: 'flex', gap: '0.75rem' }}>
           <Link to="/recommendations" className="btn btn-accent btn-sm">
             <Sparkles size={16} />
-            Run Matcher
+            Run Matches
           </Link>
           <Link to="/profile" className="btn btn-secondary btn-sm">
             Edit Preferences
