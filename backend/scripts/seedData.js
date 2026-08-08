@@ -9,7 +9,7 @@ dotenv.config();
 
 const seedDatabase = async () => {
   try {
-    const mongoUri = process.env.MONGO_URI || "mongodb://127.0.0.1:27017/study_abroad";
+    const mongoUri = process.env.MONGO_URI || "mongodb+srv://shubhmaa2016_db_user:mdqSN6R2da3BUUsX@cluster0.u4hxwup.mongodb.net/studey-abroad-plateform";
     await mongoose.connect(mongoUri);
     console.log("[Seeder] Connected to MongoDB");
 
@@ -179,3 +179,5 @@ const seedDatabase = async () => {
 };
 
 seedDatabase();
+
+export default seedDatabase;
